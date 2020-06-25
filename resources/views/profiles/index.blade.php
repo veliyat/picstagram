@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="add-post">
-    <a href="{{ route('p.create') }}" class="btn btn-primary btn-lg rounded-circle">
+    <a href="{{ route('p.create') }}" class="create-btn btn btn-primary btn-lg rounded-circle">
         <i class="fa fa-plus"></i>
     </a>
 </div>
@@ -15,14 +15,22 @@
 
             <div class="row mt-4">
                 @foreach($posts as $post)
-                    <div class="col-md-4 mb-4">
-                        <a href="{{ route('p.show', [ 'post' => $post->id ]) }}">
-                            <img class="img-thumbnail" src="{{ $post->postPicture() }}" alt="{{ $post->caption }}">
-                        </a>
+                    <div class="col-md-4 mb-3">
+                        <div class="thumbnail-border">
+                            <a href="{{ route('p.show', [ 'post' => $post->id ]) }}">
+                                <div class="image">
+                                   <img class="img img-responsive full-width" src="{{ $post->postPicture() }}" alt="{{ $post->caption }}">
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 @endforeach
+            </div>
 
-                {{ $posts->links() }}
+            <div class="row">
+                <div class="col">
+                    {{ $posts->links() }}
+                </div>
             </div>
         </div>
     </div>

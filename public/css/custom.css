@@ -1,0 +1,29 @@
+.create-btn {
+    height: 60px;
+    width: 60px;
+    line-height: 44px;
+    font-size: 28px;
+}
+
+.image{
+    position:relative;
+    overflow:hidden;
+    padding-bottom:100%;
+}
+
+.image img{
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.thumbnail-border {
+    /* thumbnail like border */
+    padding: 0.25rem;
+    background-color: #fafafa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
